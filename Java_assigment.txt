@@ -1,0 +1,63 @@
+package com.demo;
+
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+ 
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			//for example 1 
+
+			System.out.println("For Input 10,20,30,40,50,60");
+			List<Integer> productPriceList = Arrays.asList(10,20,30,40,50,60);
+			List<String> discountedItemPrice = new ArrayList<>();
+			List<String> payableItemPrice = new ArrayList<>();
+			//Example 1 
+			productPriceList.sort(Collections.reverseOrder());
+			
+				for(int i =0 ; i<productPriceList.size();i+=2) {
+				payableItemPrice.add(productPriceList.get(i).toString());
+				if(i+1 < productPriceList.size()) {
+					discountedItemPrice.add(productPriceList.get(i+1).toString());
+				}
+				else {
+					discountedItemPrice.add("(no eligible free item left, hence just paid for)");
+
+				}
+			}
+			System.out.println("Discounted Item (Free) "+ discountedItemPrice);
+			System.out.println("Payable Item Price "+ payableItemPrice);
+			
+			
+			/////////////////for example 2 
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+
+			System.out.println("For Input 10,20,30,40,50,50,60");
+
+			List<Integer> productPriceList2 = Arrays.asList(10,20,30,40,50,50,60);
+
+			for(int i =0 ; i<productPriceList2.size();i+=2) {
+				payableItemPrice.add(productPriceList2.get(i).toString());
+				if(i+1 < productPriceList2.size()) {
+					discountedItemPrice.add(productPriceList2.get(i+1).toString());
+				}
+				else {
+					discountedItemPrice.add("(no eligible free item left, hence just paid for)");
+
+				}
+			}
+			System.out.println("Discounted Item (Free) "+ discountedItemPrice);
+			System.out.println("Payable Item Price "+ payableItemPrice);
+			
+			
+			
+			
+}
+}
